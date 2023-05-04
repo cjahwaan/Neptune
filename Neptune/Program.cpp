@@ -7,7 +7,12 @@ int main()
 
 	while (!WindowShouldClose())
 	{
+		BeginDrawing();
+		ClearBackground(RAYWHITE);
 
+		GUI::Label("hello dudes", {0, 0, 12, 12}, 12, BLACK);
+		
+		EndDrawing();
 	}
 
 	CloseWindow();

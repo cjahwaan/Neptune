@@ -127,10 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GUI.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="src\MathUtiles.cpp" />
+    <ClCompile Include="src\RenderView.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GUI.h" />
+    <ClInclude Include="src\MathUtiles.h" />
+    <ClInclude Include="src\RenderView.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
