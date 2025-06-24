@@ -1,6 +1,13 @@
 #include <iostream>
+#include "Neptune.h"
 
 int main() {
-	std::cout << "now this is programming\n";
+	Neptune::InitWindow(1280, 800, "Neptune");
+	
+	while (Neptune::IsWindowRunning()) {
+
+	}
+
+	Neptune::CloseWindow();
 	return 0;
 }
