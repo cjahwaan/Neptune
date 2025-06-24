@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <GLFW/glfw3native.h>
+//#include <GLFW/glfw3native.h>
 
 namespace Neptune
 {
@@ -27,7 +28,7 @@ namespace Neptune
 	{
 		static Color white{ 1, 1, 1, 1 };
 		static Color red{ 1, 0, 0, 1 };
-		static Color eggshell{ 0.75f, 0.9f, 0.9f , 1.f};
+		static Color eggshell{ 0.9f, 0.9f, 0.9f, 1.f };
 	}
 
 	/* Initialize a window for rendering */

@@ -35,6 +35,12 @@ void OpenGlInitWindow(int width, int height, std::string title) {
 
 	glfwMakeContextCurrent(Context.Window.handle);
 
+	auto glew_error = glewInit();
+	if (GLEW_OK != glew_error) {
+		glfwTerminate();
+		exit(-1);
+	}
+
 	Context.Window.size = { width, height };
 	Context.Window.title = title;
 	Context.Window.display = {};
@@ -49,6 +55,11 @@ void OpenGlUpdate() {
 void OpenGlCloseWindow() {
 	glfwDestroyWindow(Context.Window.handle);
 	glfwTerminate();
+}
+
+void OpenGlClearColor(Neptune::Color color) {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(color.r, color.g, color.b, color.a);
 }
 
 bool Update() {
@@ -71,6 +82,9 @@ void Neptune::CloseWindow() {
 }
 
 void Neptune::ClearColor(Neptune::Color color) {
-	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(color.r, color.g, color.b, color.a);
+	OpenGlClearColor(color);
+}
+
+void Neptune::DrawRect(Neptune::RectInt rect, Neptune::Color color) {
+	// draw rect
 }
