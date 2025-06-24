@@ -2,7 +2,11 @@
 #include <iostream>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-//#include <GLFW/glfw3native.h>
+#include <GLFW/glfw3native.h>
+#include <vector>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace Neptune
 {
@@ -40,6 +44,7 @@ namespace Neptune
 	/* Close window */
 	void CloseWindow();
 
+	/* Clear Color */
 	void ClearColor(Color color);
 
 	// Draw Rectangle

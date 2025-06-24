@@ -4,6 +4,18 @@ struct Vector2Int {
 	int x, y;
 };
 
+struct Vector3Int {
+	int x, y, z;
+};
+
+struct Vector2 {
+	float x, y;
+};
+
+struct Vector3 {
+	float x, y, z;
+};
+
 typedef Vector2Int SizeInt;
 typedef Vector2Int PointInt;
 
@@ -16,6 +28,15 @@ struct Context
 		SizeInt size;
 		GLFWwindow* handle;
 	}Window;
+
+	struct {
+		std::vector<Vector3> points;
+		std::vector<int> indices;
+	}MeshBatch;
+
+	struct {
+		glm::mat4 perspective;
+	}Matrix;
 }Context;
 
 void OpenGlInitWindow(int width, int height, std::string title) {
@@ -45,6 +66,8 @@ void OpenGlInitWindow(int width, int height, std::string title) {
 	Context.Window.title = title;
 	Context.Window.display = {};
 	Context.Window.screen = {};
+
+	Context.Matrix.perspective = glm::ortho(0, 0, width, height);
 }
 
 void OpenGlUpdate() {
