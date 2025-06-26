@@ -1,24 +1,5 @@
 #include "../Neptune.h"
 
-struct Vector2Int {
-	int x, y;
-};
-
-struct Vector3Int {
-	int x, y, z;
-};
-
-struct Vector2 {
-	float x, y;
-};
-
-struct Vector3 {
-	float x, y, z;
-};
-
-typedef Vector2Int SizeInt;
-typedef Vector2Int PointInt;
-
 struct Context
 {
 	struct {
@@ -32,6 +13,7 @@ struct Context
 	struct {
 		std::vector<Vector3> points;
 		std::vector<int> indices;
+		unsigned int vbo, vao, ebo;
 	}MeshBatch;
 
 	struct {
@@ -67,7 +49,7 @@ void OpenGlInitWindow(int width, int height, std::string title) {
 	Context.Window.display = {};
 	Context.Window.screen = {};
 
-	Context.Matrix.perspective = glm::ortho(0, 0, width, height);
+	Context.Matrix.perspective = glm::ortho(0, width, 0, height);
 }
 
 void OpenGlUpdate() {
@@ -80,7 +62,7 @@ void OpenGlCloseWindow() {
 	glfwTerminate();
 }
 
-void OpenGlClearColor(Neptune::Color color) {
+void OpenGlClearColor(Color color) {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glClearColor(color.r, color.g, color.b, color.a);
 }
@@ -104,10 +86,11 @@ void Neptune::CloseWindow() {
 	OpenGlCloseWindow();
 }
 
-void Neptune::ClearColor(Neptune::Color color) {
+void Neptune::ClearColor(Color color) {
 	OpenGlClearColor(color);
 }
 
-void Neptune::DrawRect(Neptune::RectInt rect, Neptune::Color color) {
+void Neptune::DrawRect(RectInt rect, Color color) {
 	// draw rect
+	
 }
